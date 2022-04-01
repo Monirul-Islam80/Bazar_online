@@ -1,0 +1,51 @@
+.itemCard{
+    display: flex;
+    padding: 1vmax;
+    height: 8vmax;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+.itemCard >img{
+    width: 5vmax;
+}
+.itemCard>div{
+    display: flex;
+    margin: 0.3vmax 1vmax;
+    flex-direction: column;
+}
+.itemCard>div>a{
+    font: 300 0.9vmax cursive;
+    color: rgba(34, 34, 34, 0.705);
+    text-decoration: none
+}
+.itemCard>div>span{
+    font: 300 0.9vmax "Roboto";
+    color: rgba(34, 34, 34, 0.705);
+}
+.itemCard>div>p{
+    color: rgba(236, 8, 0, 0.925);
+    font: 100 0.8vmax "Roboto";
+    cursor: pointer;
+}
+@media screen and (max-width:600px) {
+    .itemCard{
+        padding: 3vmax;
+        height: 25vmax;
+    }
+    .itemCard>img{
+        width: 10vmax;
+    }
+    .itemCard>div{
+        margin: 1vmax 2vmax;
+    }
+    .itemCard>div>a{
+        font: 300 2vmax cursive;
+    }
+    .itemCard>div>span{
+        font: 300 1.9vmax "Roboto";
+    }
+    .itemCard>div>p{
+        font: 100 1.7vmax "Roboto";
+    }
+
+}

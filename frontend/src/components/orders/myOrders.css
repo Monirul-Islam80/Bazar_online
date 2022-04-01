@@ -1,0 +1,60 @@
+.myOrdersPage{
+    width: 100vw;
+    max-width: 100%;
+    padding: 0 7vmax;
+    box-sizing: border-box;
+    background-color: rgb(230, 230, 230);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.myorderhead{
+    text-align: center;
+    font: 400 1.2vmax "Roboto";
+    padding: 0.5vmax;
+    box-sizing: border-box;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.74);
+    transition: all 0.5s;
+}
+.myOrderTable{
+    background-color: white;
+}
+.myOrderTable div{
+    font: 300 1vmax 'Roboto';
+    color: rgba(0, 0, 0, 0.781);
+    border: none;
+}
+.myOrderTable a{
+    color: rgba(0, 0, 0, 0.568);
+    transition: all 0.5s;
+}
+.myOrderTable a:hover{
+    color: aqua;
+}
+.MuiDataGrid-columnHeaders{
+    background-color: #0aceff;
+    color: white;
+}
+.MuiDataGrid-columnHeaders div{
+    color: white;
+}
+
+@media screen and (max-width: 600px) {
+    .myOrdersPage{
+        padding: 0;
+        padding-top: 10vmax ;
+        
+    }
+    .myorderhead{
+        font: 400 2.2vmax 'Roboto';
+        padding: 4vw;
+    }
+    .myOrderTable div{
+        font: 300 4vw 'Roboto';
+    }
+    
+}

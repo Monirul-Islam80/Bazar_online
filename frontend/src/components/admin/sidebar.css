@@ -1,0 +1,38 @@
+.sidebar{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 0;
+}
+.sidebar> a:first-child{
+    padding: 0;
+}
+.sidebar>a>img{
+    width: 100%;
+    transition: all 0.5s;
+}
+.sidebar>a>img:hover{
+    filter: drop-shadow(0 0 10px rgba(23, 193, 255, 0.493));
+}
+.sidebar a ,
+.sidebar>span{
+    text-decoration: none;
+    transition: all 0.5s;
+    color: rgba(0, 0, 0, 0.459);
+    font: 200 1rem 'Roboto';
+    padding: 2rem;
+}
+.sidebar>a:hover,
+.sidebar>span:hover{
+    color: rgb(23 193 255);
+    transform: scale(1.1);
+}
+.sidebar a>p,
+.sidebar span>p{
+    display: flex;
+    align-items: center;
+}
+.sidebar a>p>svg,
+.sidebar span>p>svg{
+    margin-right: 0.5rem;
+}

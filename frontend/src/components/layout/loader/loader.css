@@ -1,0 +1,42 @@
+.loader{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+.loader > div{
+    background-color: rgb(71, 243, 255);
+    width: 10vmax;
+    height: 10vmax;
+
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: loading 800ms linear infinite;
+
+}
+
+@keyframes loading {
+    0%{
+        border-bottom: 5px solid rgba(59, 59, 59, 0.753);
+    }
+    25%{
+        border-left: 5px solid rgba(59, 59, 59, 0.753);
+    }
+    50%{
+        border-top: 5px solid rgba(59, 59, 59, 0.753);
+    }
+    100%{
+        border-right: 5px solid rgba(59, 59, 59, 0.753);
+    }
+}
+@media screen and (max-width: 600px) {
+    .loader>div{
+        width: 20vmax;
+        height: 20vmax;
+    }
+}

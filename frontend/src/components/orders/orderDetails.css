@@ -1,0 +1,107 @@
+.orderDetailsPage{
+
+    background-color: white;
+
+}
+.orderDetailsContainer>h1{
+    font: 300 3vmax 'Roboto';
+    color:  rgb(11, 169, 197);
+    padding: 4vmax 0;
+}
+
+
+.orderDetailsContainer{
+    padding: 5vmax;
+    padding-bottom: 0%;
+}
+.orderDetailsContainer>p{
+    font: 400 1.8vmax 'Roboto';
+
+}
+.orderDetailsContainerBox,
+.orderItemsDetails{
+margin: 2vmax;
+}
+
+.orderDetailsContainerBox>div{
+    display: flex;
+    margin: 1vmax 0;
+}
+.orderDetailsContainerBox>div>p{
+   color: black;
+    font: 400 1vmax 'Roboto';
+}
+.orderDetailsContainerBox>div>span{
+    margin: 0 1vmax;
+    font: 100 1vmax 'Roboto';
+    color: rgba(87, 87, 87, 0.884);
+}
+.orderItemsDetails{
+    padding: 5vmax;
+    padding-top: 2vmax;
+}
+.orderItemsDetailsContainer>div{
+    max-height: 20vmax;
+    overflow-y: auto;
+}
+.orderItemsDetailsContainer>div{
+    display: flex;
+    font: 400 1vmax 'Roboto';
+    align-items: center;
+    justify-content: flex-start;
+    margin: 2vmax 0;
+}
+
+.orderItemsDetailsContainer>div>img{
+    width: 3vmax;
+}
+.orderItemsDetailsContainer>div>a{
+    width: 60%;
+    text-decoration: none;
+    color: rgba(87, 87, 87, 0.884);
+    margin: 0 2vmax;
+}
+.orderItemsDetailsContainer>div>span{
+    font: 100 1vmax 'Roboto';
+    color: rgba(82, 82, 82, 0.882);
+}
+@media screen and (max-width: 600px) {
+    .orderDetailsPage{
+        grid-template-columns: 1fr;
+        height: unset;
+    }
+
+    .orderDetailsContainer>p{
+        font: 400  6vw 'Roboto';
+    }
+    .orderDetailsContainerBox>div{
+        display: flex;
+        margin: 6vw 0;
+    }
+    .orderDetailsContainerBox>div>p{
+        font: 400 4vw 'Roboto';
+    }
+    .orderDetailsContainerBox>div>span{
+        font: 100 4vw 'Roboto';
+    }
+    .orderItemsDetails>p{
+        font: 400 6vw 'Roboto';
+    }
+    .orderItemsDetailsContainer{
+        max-height: 50vw;
+    }
+    .orderItemsDetailsContainer>div{
+        font: 400 4vw 'Roboto';
+        margin: 4vw 0;
+    }
+    .orderItemsDetailsContainer>div>img{
+        width: 10vw;
+    }
+    .orderItemsDetailsContainer>div>a{
+        margin: 0;
+        width: 300%;
+    }
+    .orderItemsDetailsContainer>div>span{
+        font: 100 4vw 'Roboto';
+    }
+}

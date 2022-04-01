@@ -1,0 +1,106 @@
+.shippingContainer{
+    width: 100vw;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.shippingBox{
+    background-color: white;
+    width: 25vw;
+    height: 90vh;
+    box-sizing: border-box;
+    overflow: hidden;
+
+}
+.shippingHeading{
+    text-align: center;
+    color: rgba(0, 0, 0, 0.678);
+    font: 400 1.3vmax "Roboto";
+    padding: 1.3vmax;
+    width: 50%;
+    margin: auto;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.637);
+}
+.shippingForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2vmax;
+    margin: auto;
+
+    height: 80%;
+    transition: all 5ms;
+}
+.shippingForm>div{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.shippingForm>div>input,
+.shippingForm>div>select
+{
+padding: 1vmax 4vmax;
+width: 100%;
+box-sizing: border-box;
+padding-right: 1vmax;
+border: 1px solid rgba(0, 0, 0, 0.329);
+border-radius: 4px;
+font: 300 0.9vmax cursive;
+outline: none;
+
+}
+.shippingForm>div>svg{
+    position: absolute;
+    transform: translateX(1vmax);
+    font-size: 1.6vmax;
+    color: rgba(0, 0, 0, 0.644);
+}
+.shippingBtn{
+    border: none;
+    background-color: rgb(7, 180, 192);
+    color: white;
+    font: 300 0.9vmax "Roboto";
+    width: 100%;
+    padding: 0.8vmax;
+    cursor: pointer;
+    transition: all 0.5s;
+    border-radius: 4px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.37);
+}
+.shippingBtn:hover{
+    background-color: rgb(7, 153, 163);
+}
+
+
+@media screen and (max-width:600px) {
+    .shippingBox{
+        width: 100vw;
+        height: 95vh;
+
+    }
+    .shippingHeading{
+        font: 400 6vw 'Roboto';
+        padding: 5vw;
+    }
+    .shippingForm{
+        padding: 11vw;
+
+    }
+    .shippingForm>div>input,
+    .shippingForm>div>select{
+        padding: 5vw 10vw;
+        font: 300 4vw cursive;
+    }
+    .shippingForm>div>svg{
+        font-size: 2.8vmax;
+    }
+    .shippingBtn{
+        font: 300 1.9vmax "Roboto";
+        padding: 1.8vmax;
+    }
+
+}
