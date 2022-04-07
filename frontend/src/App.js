@@ -86,7 +86,7 @@ function App() {
   return (
     <>
       <Router>
-        <React.Suspense fallback={Loader} >
+        <React.Suspense fallback={<Loader/>} >
 
 
           <Header />
