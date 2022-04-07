@@ -2,6 +2,8 @@ import React from 'react';
 import { ReactNavbar } from 'overlay-navbar'
 import './Header.css';
 import logo from '../../../images/logo.png'
+import { MdSearch } from 'react-icons/md';
+import { CgChart, CgProfile } from 'react-icons/cg';
 function Header() {
   
 const options = {
@@ -28,8 +30,11 @@ const options = {
   link1ColorHover: "#0aceff",
   link1Margin: "1vmax",
   profileIconUrl: "/login",
+  ProfileIconElement: <CgProfile/> ,
   profileIconColor: "rgba(35, 35, 35,0.8)",
+  SearchIconElement: <MdSearch/>,
   searchIconColor: "rgba(35, 35, 35,0.8)",
+  CartIconElement: <CgChart/>,
   cartIconColor: "rgba(35, 35, 35,0.8)",
   profileIconColorHover: "#0aceff",
   searchIconColorHover: "#0aceff",

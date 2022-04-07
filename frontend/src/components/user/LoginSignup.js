@@ -28,7 +28,7 @@ const LoginSignup = ({history,location}) => {
     const { name, email, password } = user;
     const [avatar, setavater] = useState('no_avatar');
     const [avatarPreview, setavaterPreview] = useState('/Profile.png');
-    console.log(user);
+   
     const loginSubmit = (e) => {
         e.preventDefault();
         dispatch(login(loginEmail, loginPassword));
@@ -40,11 +40,10 @@ const LoginSignup = ({history,location}) => {
         myform.set("email", email);
         myform.set("password", password);
         myform.set("avatar", avatar);
-        console.log(myform);
+      
         dispatch(register(myform));
         
     }
-
     const registerDataChange = (e)=>{
         if (e.target.name === 'avatar') {
             const reader = new FileReader();
