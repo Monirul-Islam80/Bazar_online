@@ -1,11 +1,11 @@
 import React from "react";
 import "./aboutSection.css";
 import { Button, Typography, Avatar } from "@material-ui/core";
-import { FiInstagram, FiYoutube } from "react-icons/fi";
+import { FiFacebook, FiPhoneCall } from "react-icons/fi";
 
 const About = () => {
   const visitInstagram = () => {
-    window.location = "https://instagram.com/meabhisingh";
+    window.location = "https://www.instagram.com/__monirul___/";
   };
   return (
     <div className="aboutSection">
@@ -18,7 +18,7 @@ const About = () => {
           <div>
             <Avatar
               style={{ width: "10vmax", height: "10vmax", margin: "2vmax 0" }}
-              src="https://res.cloudinary.com/tripleayt/image/upload/v1631555947/products/jpyibarlaxawvcvqjv5b.png"
+              src="https://res.cloudinary.com/soumiks/image/upload/v1649699820/bazar_avatar/gaf0hteuajg3bnyjjqhn.png"
               alt="Founder"
             />
             <Typography>Abhishek Singh</Typography>
@@ -33,14 +33,14 @@ const About = () => {
           <div className="aboutSectionContainer2">
             <Typography component="h2">Our Brands</Typography>
             <a
-              href="https://www.youtube.com/channel/UCO7afj9AUo0zV69pqEYhcjw"
+              href="https://web.facebook.com/soumik.ahmad.5/"
               target="blank"
             >
-              <FiYoutube className="youtubeSvgIcon" />
+              <FiFacebook className="youtubeSvgIcon" />
             </a>
 
-            <a href="https://instagram.com/meabhisingh" target="blank">
-              < FiInstagram className="instagramSvgIcon" />
+            <a href="callto:+8801580736344" target="blank">
+              < FiPhoneCall className="instagramSvgIcon" />
             </a>
           </div>
         </div>

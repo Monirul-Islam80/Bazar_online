@@ -1,49 +1,59 @@
-import React from 'react';
-import { ReactNavbar } from 'overlay-navbar'
-import './Header.css';
-import logo from '../../../images/logo.png'
-import { MdSearch } from 'react-icons/md';
-import { CgChart, CgProfile } from 'react-icons/cg';
-function Header() {
-  
-const options = {
-  burgerColorHover: "#0aceff",
-  logo,
-  logoWidth: "20vmax",
-  navColor1: "#7abbcc99",
-  logoHoverSize: "10px",
-  logoHoverColor: "#0aceff",
-  link1Text: "Home",
-  link2Text: "Products",
-  link3Text: "Contact",
-  link4Text: "About",
-  link1Url: "/",
-  link2Url: "/products",
-  link3Url: "/contact",
-  link4Url: "/about",
-  link1Size: "1.3vmax",
-  link1Color: "rgba(35, 35, 35,0.8)",
-  nav1justifyContent: "flex-end",
-  nav2justifyContent: "flex-end",
-  nav3justifyContent: "flex-start",
-  nav4justifyContent: "flex-start",
-  link1ColorHover: "#0aceff",
-  link1Margin: "1vmax",
-  profileIconUrl: "/login",
-  ProfileIconElement: <CgProfile/> ,
-  profileIconColor: "rgba(35, 35, 35,0.8)",
-  SearchIconElement: <MdSearch/>,
-  searchIconColor: "rgba(35, 35, 35,0.8)",
-  CartIconElement: <CgChart/>,
-  cartIconColor: "rgba(35, 35, 35,0.8)",
-  profileIconColorHover: "#0aceff",
-  searchIconColorHover: "#0aceff",
-  cartIconColorHover: "#0aceff",
-  cartIconMargin: "1vmax",
+import React, { useEffect, useState } from 'react'
+import './Header.css'
+import { Link } from 'react-router-dom'
+import { BsPersonSquare } from "react-icons/bs";
 
-};
+import { MdShoppingCart, MdClose, MdDehaze } from "react-icons/md";
+import { FcSearch } from "react-icons/fc";
 
-  return <><ReactNavbar  {...options} /></>;
+const Header = () => {
+  const logo = 'https://res.cloudinary.com/soumiks/image/upload/v1649440875/bazar_avatar/vyokiycg8nu51hswft4x.png'
+       const [state, setstate] = useState('');
+       const [btn, setbtn] = useState(false)
+       const [animation, setanimation] = useState('');
+       const toggle = ()=>{
+if (animation === '') {
+  setstate("flex")
+  setanimation("anima1")
+}else if (animation === "anima1") {
+  setanimation( "anima2" )
+}else if(animation === "anima2"){
+  setanimation("anima1")
+}
+       }
+useEffect(() => {
+  setstate("none")
+}, [])
+
+  return (
+    <>
+    <div className='togglebtn'>
+      <span onClick={()=>{toggle(); setbtn(!btn)} }>{ btn===false? <MdDehaze/> : <MdClose/>}</span>
+    </div>
+      <div className={`nav ${animation} `} style={{display: state }}>
+        <div className="logo">
+          <img src={logo} alt="logo" />
+        </div>
+        <div className="link1">
+          <div>
+            <Link to='/'>Home</Link>
+            <Link to='/products'>Products</Link>
+          </div>
+          <div>
+            <Link to='/contact'>Contact</Link>
+            <Link to='/about'>About</Link>
+          </div>
+
+
+        </div>
+        <div className="link2">
+          <Link to="/search" >{<FcSearch />}</Link>
+          <Link to="/cart">{< MdShoppingCart />}</Link>
+          <Link to="/account">{<BsPersonSquare />}</Link>
+        </div>
+      </div>
+    </>
+  )
 }
 
-export default Header;
+export default Header

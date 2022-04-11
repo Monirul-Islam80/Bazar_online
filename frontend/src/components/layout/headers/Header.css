@@ -1,3 +1,4 @@
+
 .speedDial {
   position: fixed;
   right: 3vmax;
@@ -9,4 +10,124 @@
   height: 56px;
   border-radius: 100%;
   object-fit: cover;
+}
+
+.nav {
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(0, 255, 255, 0.683);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
+}
+.anima1{
+  display: flex;
+  animation: navanimation 1s linear both;
+}
+@keyframes navanimation {
+  0% {
+      
+      -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+      clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+  }
+
+  100% {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+.anima2{
+  animation: navanimation2 1s linear both;
+}
+@keyframes navanimation2 {
+  0% {
+
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  100% {
+      -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+      clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+      display: none;
+  }
+}
+
+.togglebtn{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 13;
+}
+.togglebtn>span>svg{
+  font-size: 3vmax;
+}
+.logo {
+  width: 20vmax;
+  transition: all 0.5s;
+}
+.logo:hover{
+  box-shadow: 0px 0px 20px 20px aqua;
+}
+
+.logo>img {
+  width: 100%;
+}
+
+.link1 {
+
+  width: 40vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
+.link1>div>a {
+  text-decoration: none;
+  color: rgb(30, 30, 30);
+  font: 300 1.8vmax arial;
+  margin: 10px;
+  transition: all 0.5s;
+
+}
+.link1>div>a:hover {
+ color: #00fdff;
+}
+
+.link2 {
+  width: 11vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link2>a {
+  text-decoration: none;
+  color: rgb(56, 56, 56);
+  font: 300 1.8vmax arial;
+  margin: 10px;
+ 
+
+}
+.link2>a>svg{
+   transition: all 0.5s;
+}
+.link2>a>svg:hover{
+  color: #00fdff;
+}
+.link2>a:first-child>svg:hover{
+transform: scale(1.5);
+}
+@media screen and (max-width:600px){
+  .link1{
+      justify-content: flex-start;
+  }
+  .link2{
+      flex-direction: column;
+  }
 }
