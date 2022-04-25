@@ -21,13 +21,12 @@ const About = () => {
               src="https://res.cloudinary.com/soumiks/image/upload/v1649699820/bazar_avatar/gaf0hteuajg3bnyjjqhn.png"
               alt="Founder"
             />
-            <Typography>Abhishek Singh</Typography>
+            <Typography>Monirul Islma Soumik</Typography>
             <Button onClick={visitInstagram} color="primary">
               Visit Instagram
             </Button>
             <span>
-              This is a sample wesbite made by @meabhisingh. Only with the
-              purpose to teach MERN Stack on the channel 6 Pack Programmer
+              This is a ecommerce wesbite made by Monirul.
             </span>
           </div>
           <div className="aboutSectionContainer2">
