@@ -21,8 +21,7 @@ import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js';
 import Loader from './components/layout/loader/Loader';
 import Uo2 from './components/layout/headers/Uo2';
-
-
+import NotFound from './components/layout/Notfound/NotFound.js'
 
 const UpdatePassword = React.lazy(()=> import('./components/user/UpdatePassword'));
 const ForgotPassword = React.lazy(()=> import('./components/user/ForgotPassword'));
@@ -31,7 +30,7 @@ const ResetPassword = React.lazy(()=> import('./components/user/ResetPassword'))
 
 
 const Contact = React.lazy(()=> import('./components/layout/Contact/Contact'));
-const NotFound = React.lazy(()=> import('./components/layout/NotFound/NotFound.js'));
+// const NotFound = React.lazy(()=> import('./components/layout/NotFound/NotFound.js'));
 const About = React.lazy(()=> import('./components/layout/About/About'));
 const Dashboard = React.lazy(() => import('./components/admin/Dashboard'));
 const ProductsList = React.lazy(() => import('./components/admin/ProductsList'));
@@ -119,7 +118,7 @@ function App() {
             <ProtectedRoute isAdmin={true} exact path='/admin/users' component={UserList} />
             <ProtectedRoute isAdmin={true} exact path='/admin/user/:id' component={UpdateUser} />
             <ProtectedRoute isAdmin={true} exact path='/admin/reviews' component={ProductReviews} />
-            <Route component={window.location.pathname === '/process/payment' ? null : NotFound} />
+            <Route component={window.location.pathname === '/process/payment' ? null : NotFound } />
           </Switch>
           <Footer />
 
