@@ -4,7 +4,21 @@
   right: 3vmax;
   top: 3vmax;
 }
-
+.login{
+  position: fixed;
+  right: 3vmax;
+  top: 3vmax;
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+  background-color: #00fdff;
+}
+.login>a{
+  color: red;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
 .speedDialIcon {
   width: 56px;
   height: 56px;
@@ -96,7 +110,7 @@
 
 }
 .link1>div>a:hover {
- color: #00fdff;
+ color: white;
 }
 
 .link2 {
@@ -118,7 +132,7 @@
    transition: all 0.5s;
 }
 .link2>a>svg:hover{
-  color: #00fdff;
+  color: white;
 }
 .link2>a:first-child>svg:hover{
 transform: scale(1.5);

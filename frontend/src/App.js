@@ -16,35 +16,22 @@ import UserOptions from './components/layout/headers/UserOptions'
 import { useSelector } from 'react-redux';
 import Profile from './components/user/Profile'
 import UpdateProfile from './components/user/UpdateProfile'
-import UpdatePassword from './components/user/UpdatePassword'
-import ForgotPassword from './components/user/ForgotPassword'
-import ResetPassword from './components/user/ResetPassword'
 import ProtectedRoute from './components/Route/ProtectedRoute';
-// import Cart from './components/cart/Cart';
-// import Shipping from './components/cart/Shipping'
-// import ConfirmOrder from './components/cart/ConfirmOrder'
-// import Payment from './components/cart/Payment'
 import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js';
-// import OrderSuccess from './components/cart/OrderSuccess'
-// import MyOrders from './components/orders/MyOrders'
-// import OrderDetails from './components/orders/OrderDetails'
-
-// import Dashboard from './components/admin/Dashboard'
-// import ProductsList from './components/admin/ProductsList'
-// import NewProduct from './components/admin/NewProduct';
-// import UpdateProduct from './components/admin/UpdateProduct.js';
-// import OrderList from './components/admin/OrderList.js';
-// import ProcessOrder from './components/admin/ProcessOrder.js';
-// import UserList from './components/admin/UserList';
-// import UpdateUser from './components/admin/UpdateUser';
-// import ProductReviews from './components/admin/ProductReviews';
-
-import NotFound from './components/layout/Notfound/NotFound.js';
-import Contact from './components/layout/Contact/Contact';
-import About from './components/layout/About/About';
 import Loader from './components/layout/loader/Loader';
+import Uo2 from './components/layout/headers/Uo2';
 
+
+
+const UpdatePassword = React.lazy(()=> import('./components/user/UpdatePassword'));
+const ForgotPassword = React.lazy(()=> import('./components/user/ForgotPassword'));
+const ResetPassword = React.lazy(()=> import('./components/user/ResetPassword'));
+
+
+const NotFound = React.lazy(()=> import('./components/layout/NotFound/NotFound'));
+const Contact = React.lazy(()=> import('./components/layout/Contact/Contact'));
+const About = React.lazy(()=> import('./components/layout/About/About'));
 const Dashboard = React.lazy(() => import('./components/admin/Dashboard'));
 const ProductsList = React.lazy(() => import('./components/admin/ProductsList'));
 const NewProduct = React.lazy(() => import('./components/admin/NewProduct'));
@@ -91,7 +78,8 @@ function App() {
 
 
           <Header />
-          {isAuthUser && <UserOptions user={user} />}
+          {isAuthUser ? <UserOptions user={user} /> : <Uo2/> }
+
           {stripeApiKey && (<Elements stripe={loadStripe(stripeApiKey)} >
             <ProtectedRoute exact path='/process/payment' component={Payment} />
           </Elements>)}
