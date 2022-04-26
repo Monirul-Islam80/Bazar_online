@@ -29,8 +29,9 @@ const ForgotPassword = React.lazy(()=> import('./components/user/ForgotPassword'
 const ResetPassword = React.lazy(()=> import('./components/user/ResetPassword'));
 
 
-const NotFound = React.lazy(()=> import('./components/layout/NotFound/NotFound.js'));
+
 const Contact = React.lazy(()=> import('./components/layout/Contact/Contact'));
+const NotFound = React.lazy(()=> import('./components/layout/NotFound/NotFound.js'));
 const About = React.lazy(()=> import('./components/layout/About/About'));
 const Dashboard = React.lazy(() => import('./components/admin/Dashboard'));
 const ProductsList = React.lazy(() => import('./components/admin/ProductsList'));
