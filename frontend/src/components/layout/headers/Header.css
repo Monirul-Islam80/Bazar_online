@@ -1,10 +1,9 @@
-
 .speedDial {
   position: fixed;
   right: 3vmax;
   top: 3vmax;
 }
-.login{
+.login {
   position: fixed;
   right: 3vmax;
   top: 3vmax;
@@ -17,8 +16,8 @@
   justify-content: center;
   z-index: 11;
 }
-.login>a{
-  color: #c82200;
+.login > a {
+  color: #000000;
   text-decoration: none;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
@@ -36,86 +35,81 @@
   height: 100vh;
   align-items: center;
   justify-content: space-around;
-  background-color: rgba(0, 255, 255, 0.683);
+  background-color: rgb(114, 255, 255);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 11;
 }
-.anima1{
+.anima1 {
   display: flex;
-  animation: navanimation 1s linear both;
+  animation: navanimation 0.5s linear both;
 }
 @keyframes navanimation {
   0% {
-      
-      -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
-      clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
   }
 
   100% {
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 }
-.anima2{
-  animation: navanimation2 1s linear both;
+.anima2 {
+  animation: navanimation2 0.5s linear both;
 }
 @keyframes navanimation2 {
   0% {
-
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 
   100% {
-      -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
-      clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
-      display: none;
+    -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+    display: none;
   }
 }
 
-.togglebtn{
+.togglebtn {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 13;
 }
-.togglebtn>span>svg{
+.togglebtn > span > svg {
   font-size: 3vmax;
 }
 .logo {
   width: 20vmax;
   transition: all 0.5s;
 }
-.logo:hover{
+.logo:hover {
   box-shadow: 0px 0px 20px 20px aqua;
 }
 
-.logo>img {
+.logo > img {
   width: 100%;
 }
 
 .link1 {
-
   width: 40vw;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-
 }
 
-.link1>div>a {
+.link1 > div > a {
   text-decoration: none;
   color: rgb(30, 30, 30);
   font: 300 1.8vmax arial;
   margin: 10px;
   transition: all 0.5s;
-
 }
-.link1>div>a:hover {
- color: white;
+.link1 > div > a:hover {
+  color: white;
 }
 
 .link2 {
@@ -125,28 +119,26 @@
   justify-content: center;
 }
 
-.link2>a {
+.link2 > a {
   text-decoration: none;
   color: rgb(56, 56, 56);
   font: 300 1.8vmax arial;
   margin: 10px;
- 
-
 }
-.link2>a>svg{
-   transition: all 0.5s;
+.link2 > a > svg {
+  transition: all 0.5s;
 }
-.link2>a>svg:hover{
+.link2 > a > svg:hover {
   color: white;
 }
-.link2>a:first-child>svg:hover{
-transform: scale(1.5);
+.link2 > a:first-child > svg:hover {
+  transform: scale(1.5);
 }
-@media screen and (max-width:600px){
-  .link1{
-      justify-content: flex-start;
+@media screen and (max-width: 600px) {
+  .link1 {
+    justify-content: flex-start;
   }
-  .link2{
-      flex-direction: column;
+  .link2 {
+    flex-direction: column;
   }
 }

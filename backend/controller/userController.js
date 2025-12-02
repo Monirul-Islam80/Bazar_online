@@ -9,30 +9,30 @@ const cloudinary = require('cloudinary');
 //register a user
 
 exports.registerUser = catchAsyncError(async (req, res, next) => {
-    
-    const { name, email, password } = req.body;
-    const newUser = { name, email, password}
-    if (req.body.avatar !== "no_avatar") {
-           const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
-        crop: "scale",
-        folder: "bazar_avatar",
-        width: 150
 
-    });
-    newUser.avatar = {
+    const { name, email, password } = req.body;
+    const newUser = { name, email, password }
+    if (req.body.avatar !== "no_avatar") {
+        const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
+            crop: "scale",
+            folder: "bazar_avatar",
+            width: 150
+
+        });
+        newUser.avatar = {
             public_id: myCloud.public_id,
             url: myCloud.secure_url
         }
-    }else{
+    } else {
         newUser.avatar = {
             public_id: req.body.avatar,
             url: req.body.avatar
         }
     }
- 
 
-    
-    
+
+
+
 
     const user = await User.create(
         newUser
@@ -90,8 +90,8 @@ exports.forgotPassword = catchAsyncError(async (req, res, next) => {
     const resetToken = user.getResetPasswordToken();
 
     await user.save({ validateBeforeSave: false });
-// ${req.protocol}://${req.get(
-//         'host')}
+    // ${req.protocol}://${req.get(
+    //         'host')}
     const resetPasswordUrl = `${req.protocol}://
     ${req.get("host")}/password/reset/${resetToken}`;
     const message = `<h2>Dear User,</h2>
@@ -196,16 +196,16 @@ exports.updateUserProfile = catchAsyncError(async (req, res, next) => {
 
 
     if (req.body.avatar !== "") {
-    
-    console.log(req.body.avatar)
+
+        console.log(req.body.avatar)
         const user = await User.findById(req.user.id);
 
-        const imageId =  user.avatar.public_id;
+        const imageId = user.avatar.public_id;
 
         await cloudinary.v2.uploader.destroy(imageId);
 
 
-        const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar,{
+        const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
             crop: "scale",
             folder: "bazar_avatar",
             width: 150
@@ -217,13 +217,13 @@ exports.updateUserProfile = catchAsyncError(async (req, res, next) => {
         }
     }
 
-  await User.findByIdAndUpdate(req.user.id, newUserData, {
+    await User.findByIdAndUpdate(req.user.id, newUserData, {
         new: true,
         runValidators: true,
         useFindAndModify: false
     });
 
-    res.status(201).json({ 
+    res.status(201).json({
         success: true
     });
 })
@@ -262,7 +262,7 @@ exports.updateUserRole = catchAsyncError(async (req, res, next) => {
         email: req.body.email,
         role: req.body.role
     }
-   
+
     const user = await User.findByIdAndUpdate(req.params.id, newUserData, {
         new: true,
         runValidators: true,
@@ -280,14 +280,14 @@ exports.deleteUser = catchAsyncError(async (req, res, next) => {
 
     const user = await User.findById(req.params.id);
 
-  
+
 
     if (!user) {
-     
+
         return next(new ErrorHandler(`User does not exist with id ${req.params.id}`, 404));
     }
-    
-    const imageId =  user.avatar.public_id;
+
+    const imageId = user.avatar.public_id;
 
     await cloudinary.v2.uploader.destroy(imageId);
     await user.remove();
