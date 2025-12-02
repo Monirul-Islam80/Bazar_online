@@ -1,11 +1,11 @@
 import React from "react";
 import "./aboutSection.css";
 import { Button, Typography, Avatar } from "@material-ui/core";
-import { FiFacebook, FiPhoneCall } from "react-icons/fi";
+import { FiFacebook, FiGithub, FiPhoneCall } from "react-icons/fi";
 
 const About = () => {
   const visitInstagram = () => {
-    window.location = "https://www.instagram.com/__monirul___/";
+    window.location = "https://moniruls.netlify.app/";
   };
   return (
     <div className="aboutSection">
@@ -23,23 +23,18 @@ const About = () => {
             />
             <Typography>Monirul Islma Soumik</Typography>
             <Button onClick={visitInstagram} color="primary">
-              Visit Instagram
+              Visit Portfolio
             </Button>
-            <span>
-              This is a ecommerce wesbite made by Monirul.
-            </span>
+            <span>This is a ecommerce wesbite made by Monirul.</span>
           </div>
           <div className="aboutSectionContainer2">
-            <Typography component="h2">Our Brands</Typography>
-            <a
-              href="https://web.facebook.com/soumik.ahmad.5/"
-              target="blank"
-            >
-              <FiFacebook className="youtubeSvgIcon" />
+            <Typography component="h2">Socials</Typography>
+            <a href="https://github.com/Monirul-Islam80" target="blank">
+              <FiGithub className="youtubeSvgIcon" />
             </a>
 
             <a href="callto:+8801580736344" target="blank">
-              < FiPhoneCall className="instagramSvgIcon" />
+              <FiPhoneCall className="instagramSvgIcon" />
             </a>
           </div>
         </div>
